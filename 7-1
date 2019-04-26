@@ -1,0 +1,9 @@
+birth=(input("생년월일을 입력하세여."))
+if int(birth[4:6])>12:
+    print("올바른 생년월일이 아닙니다")
+elif int(birth[4:6])<1:
+    print("올바른 생년월일이 아닙니다")
+elif int(birth[6:8])>31:
+    print("올바른 생년월일이 아닙니다")
+else:
+    print("올바른 생년월일입니다.")
