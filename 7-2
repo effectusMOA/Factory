@@ -1,0 +1,5 @@
+a=input("입력해")
+j=''
+for i in reversed(a):
+    j+=i
+print(j)
