@@ -1,0 +1,9 @@
+class ScoreManager:
+    def __init__(self):
+        self.li=[]
+    def a(self,score):
+        li.append(score)
+b=int(input())
+if b==1:
+    
+        
