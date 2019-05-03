@@ -1,0 +1,21 @@
+class Dog:
+    def rightupEars(self):
+        print("귀를 쫑긋")
+    
+    def bark(self):
+        print("멍멍")
+
+    def spin(self):
+        print("뒹굴")
+
+
+my_dog = Dog()
+
+s = input("어디터치? ")
+
+if s == "귀":
+    my_dog.rightupEars()
+if s=="입":
+    my_dog.bark()
+if s=="발":
+    my_dog.spin()
