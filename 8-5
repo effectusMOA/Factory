@@ -1,0 +1,20 @@
+class Employee:
+    li=dict()
+    emp_cnt=0
+    def __init__(self,name="NULL",salary=0):
+        self.name=name  ##각 개인마다 가지는 변수이기 떄문에 self.
+        self.salary=salary
+        Employee.li[name]=salary
+        Employee.emp_cnt+=1
+    def get_salary(self,name):
+        return Employee.li[name]
+    def get_name(self):
+        return Employee.li
+    def get_tot_cnt(self):
+        return Employee.emp_cnt
+
+
+a=Employee("ㄱ", 30)
+a=Employee('ㄴ',20)
+print(a.get_salary('ㄴ'))
+print(a.get_name())
