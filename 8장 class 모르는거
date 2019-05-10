@@ -1,0 +1,16 @@
+class Counter:
+    def __init__(self):
+        count=0
+        Counter.li=[0,0]
+    def reset(self):
+        self.li[0]=1
+    def increment(self):
+        self.li[1]=1
+    def get(self):
+        return Counter.li
+a=Counter()
+a.reset()
+print(a.get())   ##왜 a를 리셋하고 b를 생성하면 [1,0] [0,1]이 되는데 b를 생성하고 a를 리셋하면 [1,0] [1,1]이 될까 애초에 li 자체를 변환시키는 
+b=Counter()     ##거라면 각 객체마다 li를 다르게 설정할 순 없는감..? self.li처럼..?
+b.increment()
+print(b.get())
