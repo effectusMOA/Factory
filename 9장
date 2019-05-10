@@ -1,0 +1,10 @@
+import time
+from tkinter import*
+window=Tk()
+canvus=Canvas(window,width=400,height=300)
+canvus.pack()
+id=canvus.create_oval(100,100,50,150, fill='green') ##x,y좌표,가로,
+for i in range(100):
+    canvus.move(id,3,1)
+    window.update()
+    time.sleep(0.05) 
