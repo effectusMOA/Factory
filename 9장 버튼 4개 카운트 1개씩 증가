@@ -1,0 +1,14 @@
+from tkinter import*
+def america(i):
+    button=li[i]
+    count[i]+=1
+    button['text']=blist[i]+str(count[i])
+window=Tk()
+blist=['미국:','영국:','프랑스:','일본:']
+li=[]
+count=[0,0,0,0]
+for i in range(4):
+    b1=Button(window,text=blist[i],command=lambda k=i: america(k))
+    b1.grid(row=i,column=0)
+    li.append(b1)
+b1.mainloop()
