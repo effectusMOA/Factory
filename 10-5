@@ -1,0 +1,6 @@
+import random
+numbers=[]
+for x in range(10):
+    n=random.randrange(0,100)
+    numbers.append(n*-1)
+print(sorted(numbers,key=abs))
