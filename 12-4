@@ -1,0 +1,21 @@
+def process(w):
+    output=""
+    for ch in w:
+        if (ch.isalpha()):
+            output+=ch
+    return output.lower()
+infile=open('1.txt','r')
+li=[]
+dic={}
+for line in infile:
+    line=line.rstrip()
+    li1=line.split()
+    for word in li1:
+        li.append(process(word))
+for word in li:
+    if word not in dic:
+        dic[word]=1
+    else:
+        dic[word]+=1
+
+print(dic)
