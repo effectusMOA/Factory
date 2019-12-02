@@ -6,7 +6,7 @@ double sum(double(*a)[3], int size);
 		double(*p)[3];
 		int i, j;
 		double total;
-		p = (double(*)[3])malloc(12 * sizeof(double));
+		p = (double(*)[3])malloc(12 * sizeof(double)); 
 
 		for (i = 0; i < 4; i++)
 		{
@@ -16,3 +16,28 @@ double sum(double(*a)[3], int size);
 			}
 		}
 	}
+//4by3의 엘리멘트 수가 몇개야 열의 수가 되는 거라고? 3의 크기 1차원 배열 4개를 확보 각각 1차원 크기가 4by 3이니까 각각의 엘리먼트 
+하나의 행렬 몇바이트  24바이트 할당 포인터 형으로 변화시킨 p i 
+p0 p3 가 각각의 1차원 배열의 시작 주소를 가짐. *(p[0]+0)= p[0][0]
+*(p[1]+1)=p[1][1] 그래서 p[i][j]=i+j이다...? 이게 뭔 개소리지
+total =sum((double(*)[3])p,4); // 더블 형변환이 있어야 한다. p는 포인트 배열 타입이니까.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char *argv[])
+{
+
+
+	double *p[4];
+	int i, j;
+	double total;
+	p[0] = (double*)malloc(3 * sizeof(double)); //이차원 배열로 선언할 순 있지만 이차원 배열은 아니다.
+	p[1] = (double*)malloc(4 * sizeof(double));
+	p[2] = (double*)malloc(5 * sizeof(double));
+	p[3] = (double*)malloc(6 * sizeof(double));// 3 4 5 6 배열을 마음대로 선언할 수 있다. 동적 할당은 지금은 몰라도 된다. 시험문제 안냄. 2학년 때 사용할 수 있음.
+		total = sum((double(*)[3])p, 4);
+	printf("%f", total);
+	for (i = 0; i < 4; i++)
+		free(p[i]);
+	return 0;
+}
