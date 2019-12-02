@@ -1,0 +1,51 @@
+strlen(s) 문자열의 크기 구함
+strcpy(s1,s2) s2를 s1에 복사한다.
+strcat (s1,s2) s2를 s1의 끝에 붙여넣는다.
+strcmp(s1,s2) s1과 s2를 비교한다.
+strncpy(s1,s2,n) s2의 최대 n개의 문자를 s1에 복사한다.
+strncat(s1,s2,n) 최대n개의 문자까지 s1과 s2를 비교한다.
+strchr(s,c) 문자열 s안에서 문자 c를 찾는다.
+isalpha
+sprintf(str,"%f",v); 실수형 값을 저 str이라는 형태로 저장.
+int atoi
+long atoi
+double atof
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int len;
+int mystrlen(char *s);
+void mystrcpy(char *d, char *s);
+int main(int argc, char *argv[])
+{
+	float value;
+	char str[20];
+	char des[20];
+	sprintf_s(str, "%06.2f\n",34.20);  
+	printf("%s\n", str); //문자열에 저장된다는 것은 은근히 이득인 부분이 많지 버퍼가 뭔데 근데 우리가 어떤 함수가 있어
+	len = mystrlen(str);
+	mystrcpy(des, str);
+	printf("%d\n", len);
+	printf("%s", des);
+}
+
+int mystrlen(char *s) // 시작 주소값을 넘겨서 한다고..?
+{
+	int i = 0;
+	while (s[i] != '\0')
+		i++;
+	i++;
+	return i;
+}
+void mystrcpy(char *d, char *s)
+{
+	int size = 0;
+	while (s[size] != '\n')
+	{
+		d[size] = s[size];
+		size++;
+	}
+	d[size] = '\n'; //값이 이상하게 나오는 데 빈 칸이 나온후 더해지는 거 같은데
+}
