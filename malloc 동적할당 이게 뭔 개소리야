@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+double sum(double(*a)[3], int size);
+	int main(int argc, char *argv[])
+	{
+		double(*p)[3];
+		int i, j;
+		double total;
+		p = (double(*)[3])malloc(12 * sizeof(double));
+
+		for (i = 0; i < 4; i++)
+		{
+			for (j = 0; j < 3; j++)
+			{
+				p[i][j] = i + j;
+			}
+		}
+	}
